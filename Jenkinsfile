@@ -25,7 +25,7 @@ pipeline {
         }
         stage('terraform plan') {
             steps {
-                sh 'terraform plan -input=false -auto-approve ./Terraform-jenkins'
+                sh 'terraform plan -input=false ./Terraform-jenkins'
             }
         }
 
