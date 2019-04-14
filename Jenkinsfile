@@ -20,12 +20,12 @@ pipeline {
        
         stage('terraform init') {
             steps {
-                sh 'terraform init -input=false ./Terraform-jenkins'
+                sh 'terraform init -input=false ./terraform-github'
             }
         }
         stage('terraform plan') {
             steps {
-                sh 'terraform plan -input=false ./Terraform-jenkins'
+                sh 'terraform plan -input=false ./terraform-github'
             }
         }
 
