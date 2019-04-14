@@ -14,7 +14,7 @@ pipeline {
         }
         stage('git clone') {
             steps {
-                sh 'rm -r *; git clone https://github.com/mikkybang/Terraform-jenkins.git'
+                sh 'rm -r *; git clone https://github.com/mikkybang/terraform-github.git'
             }
         }
        
@@ -23,9 +23,9 @@ pipeline {
                 sh 'terraform init -input=false ./Terraform-jenkins'
             }
         }
-        stage('terraform apply') {
+        stage('terraform plan') {
             steps {
-                sh 'terraform apply -input=false -auto-approve ./Terraform-jenkins'
+                sh 'terraform plan -input=false -auto-approve ./Terraform-jenkins'
             }
         }
 
